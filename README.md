@@ -3,22 +3,22 @@
 
 
 
-###Features
+### Features
 
   - CPU Information(Manufacturer, Model, Cores)
   - Motherboard Information(Manufacturer, Model, Version)
   - General System Information(OS, Build, Hostname)
 
 
-###Installation
+### Installation
 ```sh
 npm install
 ```
-###Running the App
+### Running the App
 ```sh
 npm start
 ```
-#TODOS
+### TODOS
 
   - Beautify Frontend
   - Add OS Utils
