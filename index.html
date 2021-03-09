@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+
+    legend{
+      text-align:center;
+      font-family: sans-serif;
+      font:Arial;
+      font-weight: bold;
+      color:#ffbf00;
+    }
+
+    h1{
+      align:center;
+      font-family: sans-serif;
+      font:Arial;
+      color:#d82747;
+    }
+
+    body{
+      background-color:	#545760;
+      overflow-x: hidden;
+      overflow-y: hidden;
+
+    }
+
+    .appTitle{
+      background-color:#3e414b;
+      padding-top:0px;
+      margin-top:5px;
+      display: flex;
+      justify-content: center;
+      font-size: 18px;
+    }
+
+    .boardInfo{
+      display:inline-block;
+    }
+
+    .cpuInfo{
+      width:350px;
+      display:inline-block;
+    }
+
+    .memInfo{
+      width:350px;
+      display:inline-block;
+    }
+
+    .infoLabel{
+      font-family: sans-serif;
+      font:Arial;
+      font-weight: bold;
+      color:#ffbf00;
+    }
+
+
+    </style>
+    <meta charset="UTF-8">
+    <title>SYMON v0.1 by CaptainACE</title>
+    <!-- https://electronjs.org/docs/tutorial/security#csp-meta-tag -->
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+  </head>
+  <body>
+    <div class='appTitle'>
+      <h1>SYMON v0.1</h1>
+    </div>
+    <br>
+
+
+    <div class='cpuInfo'>
+      <fieldset>
+      <legend>CPU</legend>
+      <p class='infoLabel'>CPU Manafacturer:<span id="infoValueCPUMN">N/A</span></p>
+      <p class='infoLabel'>CPU Model:<span id="infoValueCPUMO">N/A</span></p>
+      <p class='infoLabel'>Cores:<span id="infoValueCores">N/A</span></p>
+    </fieldset>
+    </div>
+
+    &nbsp
+    <div class='memInfo'>
+      <fieldset>
+      <legend>System</legend>
+      <p class='infoLabel'>OS:<span id="infoValueOS">N/A</span></p>
+      <p class='infoLabel'>OS Build:<span id="infoValueOSB">N/A</span></p>
+      <p class='infoLabel'>Hostname:<span id="infoValueHN">N/A</span></p>
+    </fieldset>
+    </div>
+
+    &nbsp
+    <div class='boardInfo'>
+      <fieldset>
+      <legend>Motherboard</legend>
+      <p class='infoLabel'>Manufacturer:<span id="infoValueMAN">N/A</span></p>
+      <p class='infoLabel'>Model:<span id="infoValueMOD">N/A</span></p>
+      <p class='infoLabel'>Version:<span id="infoValueVER">N/A</span></p>
+    </fieldset>
+  </div>
+
+    <script>
+    const electron=require('electron');
+    const ipcRenderer=electron.ipcRenderer;
+
+    //catching cpustuff
+    ipcRenderer.on('CPU_INFO',(event,cpu_data) =>{
+      console.log(cpu_data);
+      document.getElementById('infoValueCPUMN').innerHTML=cpu_data[0];
+      document.getElementById('infoValueCPUMO').innerHTML=cpu_data[1];
+      document.getElementById('infoValueCores').innerHTML=cpu_data[2];
+
+    });
+
+
+    //catching systemdata
+    ipcRenderer.on('OS_INFO',function(event,os_data){
+      //console.log(data);
+      document.getElementById('infoValueOS').innerHTML=os_data[0];
+      document.getElementById('infoValueOSB').innerHTML=os_data[1];
+      document.getElementById('infoValueHN').innerHTML=os_data[2];
+    });
+
+
+    //--------------------------------cathing generalinfo
+    ipcRenderer.on('MB_INFO',function(event,mb_data){
+      //console.log(data);
+      document.getElementById('infoValueMAN').innerHTML=mb_data[0];
+      document.getElementById('infoValueMOD').innerHTML=mb_data[1];
+      document.getElementById('infoValueVER').innerHTML=mb_data[2];
+    });
+
+    </script>
+  </body>
+</html>
