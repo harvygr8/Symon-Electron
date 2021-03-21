@@ -1,62 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <style>
-
-    legend{
-      text-align:center;
-      font-family: sans-serif;
-      font:Arial;
-      font-weight: bold;
-      color:#ffbf00;
-    }
-
-    h1{
-      align:center;
-      font-family: sans-serif;
-      font:Arial;
-      color:#d82747;
-    }
-
-    body{
-      background-color:	#545760;
-      overflow-x: hidden;
-      overflow-y: hidden;
-
-    }
-
-    .appTitle{
-      background-color:#3e414b;
-      padding-top:0px;
-      margin-top:5px;
-      display: flex;
-      justify-content: center;
-      font-size: 18px;
-    }
-
-    .boardInfo{
-      display:inline-block;
-    }
-
-    .cpuInfo{
-      width:350px;
-      display:inline-block;
-    }
-
-    .memInfo{
-      width:350px;
-      display:inline-block;
-    }
-
-    .infoLabel{
-      font-family: sans-serif;
-      font:Arial;
-      font-weight: bold;
-      color:#ffbf00;
-    }
-
-
-    </style>
+    <link rel="stylesheet" type="text/css" href="styles.css">
     <meta charset="UTF-8">
     <title>SYMON v0.1 by CaptainACE</title>
     <!-- https://electronjs.org/docs/tutorial/security#csp-meta-tag -->
@@ -67,7 +12,6 @@
       <h1>SYMON v0.1</h1>
     </div>
     <br>
-
 
     <div class='cpuInfo'>
       <fieldset>
@@ -111,7 +55,6 @@
 
     });
 
-
     //catching systemdata
     ipcRenderer.on('OS_INFO',function(event,os_data){
       //console.log(data);
@@ -119,7 +62,6 @@
       document.getElementById('infoValueOSB').innerHTML=os_data[1];
       document.getElementById('infoValueHN').innerHTML=os_data[2];
     });
-
 
     //--------------------------------cathing generalinfo
     ipcRenderer.on('MB_INFO',function(event,mb_data){
