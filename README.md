@@ -1,7 +1,7 @@
 # Symon-Electron
  Lightweight System Monitor application made in Node,js and Electron
 
-
+ ![](img/show1.PNG)
 
 # Features
   - CPU Information(Manufacturer, Model, Cores)
@@ -10,7 +10,6 @@
   - General System Information(OS, Build, Hostname)
   - Stats(CPU Usage, System Uptime, Free Memory)
 
-![](img/show1.png)
 
 
 # Installation
