@@ -1,6 +1,8 @@
 # Logs
 logs
 *.log
+*.html linguist-vendored=false
+*.css linguist-vendored=false
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
