@@ -6,7 +6,9 @@
 # Features
   - CPU Information(Manufacturer, Model, Cores)
   - Motherboard Information(Manufacturer, Model, Version)
+  - GPU Information (Vendor, Model, VRAM)
   - General System Information(OS, Build, Hostname)
+  - Stats(CPU Usage, System Uptime, Free Memory)
 
 
 # Installation
