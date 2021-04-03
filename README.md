@@ -10,6 +10,8 @@
   - General System Information(OS, Build, Hostname)
   - Stats(CPU Usage, System Uptime, Free Memory)
 
+![](img/show1.png)
+
 
 # Installation
 - Run The Following Command to install dependencies
