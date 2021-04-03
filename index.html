@@ -7,32 +7,33 @@
     <!-- https://electronjs.org/docs/tutorial/security#csp-meta-tag -->
     <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
   </head>
-  <body class='bg-gray-500'>
-    <div class='bg-red-400 p-2 flex justify-center items-center'>
-      <p class='text-white font-bold text-2xl'>S.Y.M.O.N - System Monitoring Utility</p>
+  <body class='bg-red-400'>
+    <div class='bg-red-400 p-2 flex flex-col justify-center items-center'>
+      <p class='text-white font-thin text-2xl'>SYMON - System Monitoring Utility</p>
+      <hr style="width:101%;border-width:1px;" class="mt-2 rounded">
     </div>
     <br>
 
     <!-- ROW 1 -->
 
     <div class='flex flex-row'>
-      <div class='flex flex-col justify-center bg-red-400 rounded p-4 m-4 w-6/12'>
-        <p class='text-white text-2xl font-bold text-center'>Processor</p>
-        <hr style="width:100%;border-width:1px;" class="mt-2 rounded">
+      <div class='flex flex-col justify-center bg-red-400 rounded p-4 m-4 w-6/12 border-white border-2'>
+          <p class='text-white text-2xl font-thin text-center'>Processor</p>
+          <hr style="width:100%;border-width:1px;" class="mt-2 rounded">
         <div class='mt-2'>
-          <p class='text-white text-lg'>Manafacturer: <span id="infoValueCPUMN" class='font-bold'> N/A</span></p>
-          <p class='text-white text-lg'>Model: <span id="infoValueCPUMO" class='font-bold'> N/A</span></p>
-          <p class='text-white text-lg'>Cores: <span id="infoValueCores" class='font-bold'> N/A</span></p>
+          <p class='text-white text-lg'>Manafacturer: <span id="infoValueCPUMN" class='font-bold text-white'> N/A</span></p>
+          <p class='text-white text-lg'>Model: <span id="infoValueCPUMO" class='font-bold text-white'> N/A</span></p>
+          <p class='text-white text-lg'>Cores: <span id="infoValueCores" class='font-bold text-white'> N/A</span></p>
       </div>
       </div>
 
-      <div class='flex flex-col justify-center bg-red-400 rounded p-4 m-4 w-6/12'>
-        <p class='text-white text-2xl font-bold text-center'>Operating System</p>
+      <div class='flex flex-col justify-center bg-red-400 rounded p-4 m-4 w-6/12 border-white border-2'>
+        <p class='text-white text-2xl font-thin text-center'>Operating System</p>
         <hr style="width:100%;border-width:1px;" class="mt-2 rounded">
         <div class='mt-2'>
-          <p class='text-white text-lg'>OS:<span id="infoValueOS" class='font-bold'>N/A</span></p>
-          <p class='text-white text-lg'>OS Build:<span id="infoValueOSB" class='font-bold'>N/A</span></p>
-          <p class='text-white text-lg'>Hostname:<span id="infoValueHN" class='font-bold'>N/A</span></p>
+          <p class='text-white text-lg'>OS:<span id="infoValueOS" class='font-bold text-white'>N/A</span></p>
+          <p class='text-white text-lg'>OS Build:<span id="infoValueOSB" class='font-bold text-white'>N/A</span></p>
+          <p class='text-white text-lg'>Hostname:<span id="infoValueHN" class='font-bold text-white'>N/A</span></p>
       </div>
       </div>
 
@@ -42,23 +43,23 @@
 
     <div class='flex flex-row'>
 
-      <div class='flex flex-col justify-center bg-red-400 rounded p-4 m-4 w-6/12'>
-        <p class='text-white text-2xl font-bold text-center'>Motherboard</p>
+      <div class='flex flex-col justify-center bg-red-400 rounded p-4 m-4 w-6/12 border-white border-2'>
+        <p class='text-white text-2xl font-thin text-center'>Motherboard</p>
         <hr style="width:100%;border-width:1px;" class="mt-2 rounded">
         <div class='mt-2'>
-          <p class='text-white text-lg'>Manafacturer: <span id="infoValueMAN" class='font-bold'> N/A</span></p>
-          <p class='text-white text-lg'>Model: <span id="infoValueMOD" class='font-bold'> N/A</span></p>
-          <p class='text-white text-lg'>Version: <span id="infoValueVER" class='font-bold'> N/A</span></p>
+          <p class='text-white font-thin text-lg'>Manafacturer: <span id="infoValueMAN" class='font-bold text-white'> N/A</span></p>
+          <p class='text-white font-thin text-lg'>Model: <span id="infoValueMOD" class='font-bold text-white'> N/A</span></p>
+          <p class='text-white font-thin text-lg'>Version: <span id="infoValueVER" class='font-bold text-white'> N/A</span></p>
       </div>
       </div>
 
-      <div class='flex flex-col justify-center bg-red-400 rounded p-4 m-4 w-6/12'>
-        <p class='text-white text-2xl font-bold text-center'>Graphics</p>
+      <div class='flex flex-col justify-center bg-red-400 rounded p-4 m-4 w-6/12 border-white border-2'>
+        <p class='text-white text-2xl font-thin text-center'>Graphics</p>
         <hr style="width:100%;border-width:1px;" class="mt-2 rounded">
         <div class='mt-2'>
-          <p class='text-white text-lg'>Manafacturer:<span id="infoValueGVN" class='font-bold'>N/A</span></p>
-          <p class='text-white text-lg'>Model:<span id="infoValueGMD" class='font-bold'>N/A</span></p>
-          <p class='text-white text-lg'>VRAM:<span id="infoValueGRM" class='font-bold'>N/A</span>MB</p>
+          <p class='text-white font-thin text-lg'>Manafacturer:<span id="infoValueGVN" class='font-bold text-white'>N/A</span></p>
+          <p class='text-white font-thin text-lg'>Model:<span id="infoValueGMD" class='font-bold text-white'>N/A</span></p>
+          <p class='text-white font-thin text-lg'>VRAM:<span id="infoValueGRM" class='font-bold text-white'>N/A</span>MB</p>
       </div>
       </div>
 
@@ -66,13 +67,13 @@
 
 
     <div class='flex flex-row'>
-      <div class='flex flex-col justify-center bg-red-400 rounded p-4 m-4 w-full'>
-        <p class='text-white text-2xl font-bold text-center'>Usage Monitor</p>
+      <div class='flex flex-col justify-center bg-red-400 rounded p-4 m-4 w-full border-white border-2'>
+        <p class='text-white text-2xl font-thin text-center'>Usage Monitor</p>
         <hr style="width:100%;border-width:1px;" class="mt-2 rounded">
         <div class="flex flex-row justify-center items-center">
 
           <div class='p-4 m-2 flex flex-col justify-center items-center'>
-              <p class='text-white text-lg text-2xl'>CPU USAGE:</p>
+              <p class='text-white font-thin text-lg text-2xl'>Processor Usage:</p>
             <div class='flex flex-row'>
               <p id="infoValueCPT" class='font-bold text-white text-6xl'>N/A</p>
               <p class='font-bold text-white text-6xl'> %</p>
@@ -80,18 +81,18 @@
           </div>
 
           <div class='p-4 m-2 flex flex-col justify-center items-center'>
-            <p class='text-white text-lg text-2xl'>SYSTEM UPTIME:</p>
+            <p class='text-white font-thin text-lg text-2xl'>Uptime(seconds):</p>
             <div class='flex flex-row'>
               <p id="infoValueCPM" class='font-bold text-white text-6xl'> N/A</p>
-              <p class='font-bold text-white text-6xl'> s</p>
+              <p class='font-bold text-white text-6xl'></p>
             </div>
           </div>
 
           <div class='p-4 m-2 flex flex-col justify-center items-center'>
-            <p class='text-white text-lg text-2xl'>FREE MEMORY:</p>
+            <p class='text-white font-thin text-lg text-2xl'>Free Memory(GB):</p>
             <div class='flex flex-row'>
-              <p id="infoValueCPN" class='font-bold text-white text-6xl'> N/A</p>
-              <p class='font-bold text-white text-6xl'> GB</p>
+              <p id="infoValueCPN" class='font-bold text-white text-6xl'> N/A</p>&nbsp
+              <p class='font-bold text-white text-6xl'></p>
             </div>
           </div>
 

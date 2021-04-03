@@ -15,8 +15,12 @@ const {app, BrowserWindow, Menu, ipcMain} = electron;
 app.on('ready', () => {
 
   const mainWindow = new BrowserWindow({
-    width:850,
-    height:768,
+    width:860,
+    height:810,
+    minWidth:860,
+    maxWidth:860,
+    minHeight:555,
+    maxWidth:795,
     webPreferences:{
       nodeIntegration:true
     }
@@ -37,7 +41,7 @@ app.on('ready', () => {
   si.cpu().then(cpu=>{
     //console.log(cpu['manufacturer']);
     const cpuInfo=[];
-    cpuInfo.push(cpu['manufacturer'],cpu['brand'],cpu['cores']);
+    cpuInfo.push(cpu.manufacturer,cpu.brand,cpu.cores);
     //cpuInfo.push(cpu['brand']);
     //cpuInfo.push(cpu['cores']);
     mainWindow.webContents.send('CPU_INFO',cpuInfo);
@@ -47,14 +51,14 @@ app.on('ready', () => {
 
   si.osInfo().then(osi=>{
     const osInfo=[];
-    osInfo.push(osi['distro'],osi['build'],osi['hostname']);
+    osInfo.push(osi.distro,osi.build,osi.hostname);
     mainWindow.webContents.send('OS_INFO',osInfo);
   }).catch(error => console.error(error));
 
 
   si.baseboard().then(mb=>{
     const mbInfo=[];
-    mbInfo.push(mb['manufacturer'],mb['model'],mb['version'])
+    mbInfo.push(mb.manufacturer,mb.model,mb.version)
     mainWindow.webContents.send('MB_INFO',mbInfo);
   }).catch(error => console.error(error));
 
@@ -73,7 +77,7 @@ setInterval(()=>{
       //console.log( 'UPtime ' + os.sysUptime());
       mainWindow.webContents.send('CPT_INFO',mStats);
   });
-},1000);
+},500);
 
 
   //const cInfo=[];

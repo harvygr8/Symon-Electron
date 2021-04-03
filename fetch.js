@@ -36,8 +36,8 @@ ipcRenderer.on('GFX_INFO',function(event,gfx_data){
 
 ipcRenderer.on('CPT_INFO',function(event,c_data){
   //console.log(data);
-  document.getElementById('infoValueCPT').innerHTML=c_data[0];
-  document.getElementById('infoValueCPM').innerHTML=c_data[1];
+  document.getElementById('infoValueCPT').innerHTML=c_data[0].toFixed(2);
+  document.getElementById('infoValueCPM').innerHTML=c_data[1].toFixed(1);
   document.getElementById('infoValueCPN').innerHTML=c_data[2].toFixed(2);
 
 });
