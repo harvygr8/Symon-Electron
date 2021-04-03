@@ -1,28 +1,109 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link href="styles/tailwind.css" rel="stylesheet">
     <meta charset="UTF-8">
-    <title>SYMON v0.1 by CaptainACE</title>
+    <title>SYMON v1.0 by harvygr8</title>
     <!-- https://electronjs.org/docs/tutorial/security#csp-meta-tag -->
     <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
   </head>
-  <body>
-    <div class='appTitle'>
-      <h1>SYMON v0.1</h1>
+  <body class='bg-gray-500'>
+    <div class='bg-red-400 p-2 flex justify-center items-center'>
+      <p class='text-white font-bold text-2xl'>S.Y.M.O.N - System Monitoring Utility</p>
     </div>
     <br>
 
-    <div class='cpuInfo'>
-      <fieldset>
-      <legend>CPU</legend>
-      <p class='infoLabel'>CPU Manafacturer:<span id="infoValueCPUMN">N/A</span></p>
-      <p class='infoLabel'>CPU Model:<span id="infoValueCPUMO">N/A</span></p>
-      <p class='infoLabel'>Cores:<span id="infoValueCores">N/A</span></p>
-    </fieldset>
+    <!-- ROW 1 -->
+
+    <div class='flex flex-row'>
+      <div class='flex flex-col justify-center bg-red-400 rounded p-4 m-4 w-6/12'>
+        <p class='text-white text-2xl font-bold text-center'>Processor</p>
+        <hr style="width:100%;border-width:1px;" class="mt-2 rounded">
+        <div class='mt-2'>
+          <p class='text-white text-lg'>Manafacturer: <span id="infoValueCPUMN" class='font-bold'> N/A</span></p>
+          <p class='text-white text-lg'>Model: <span id="infoValueCPUMO" class='font-bold'> N/A</span></p>
+          <p class='text-white text-lg'>Cores: <span id="infoValueCores" class='font-bold'> N/A</span></p>
+      </div>
+      </div>
+
+      <div class='flex flex-col justify-center bg-red-400 rounded p-4 m-4 w-6/12'>
+        <p class='text-white text-2xl font-bold text-center'>Operating System</p>
+        <hr style="width:100%;border-width:1px;" class="mt-2 rounded">
+        <div class='mt-2'>
+          <p class='text-white text-lg'>OS:<span id="infoValueOS" class='font-bold'>N/A</span></p>
+          <p class='text-white text-lg'>OS Build:<span id="infoValueOSB" class='font-bold'>N/A</span></p>
+          <p class='text-white text-lg'>Hostname:<span id="infoValueHN" class='font-bold'>N/A</span></p>
+      </div>
+      </div>
+
     </div>
 
-    &nbsp
+    <!-- ROW 2 -->
+
+    <div class='flex flex-row'>
+
+      <div class='flex flex-col justify-center bg-red-400 rounded p-4 m-4 w-6/12'>
+        <p class='text-white text-2xl font-bold text-center'>Motherboard</p>
+        <hr style="width:100%;border-width:1px;" class="mt-2 rounded">
+        <div class='mt-2'>
+          <p class='text-white text-lg'>Manafacturer: <span id="infoValueMAN" class='font-bold'> N/A</span></p>
+          <p class='text-white text-lg'>Model: <span id="infoValueMOD" class='font-bold'> N/A</span></p>
+          <p class='text-white text-lg'>Version: <span id="infoValueVER" class='font-bold'> N/A</span></p>
+      </div>
+      </div>
+
+      <div class='flex flex-col justify-center bg-red-400 rounded p-4 m-4 w-6/12'>
+        <p class='text-white text-2xl font-bold text-center'>Graphics</p>
+        <hr style="width:100%;border-width:1px;" class="mt-2 rounded">
+        <div class='mt-2'>
+          <p class='text-white text-lg'>Manafacturer:<span id="infoValueGVN" class='font-bold'>N/A</span></p>
+          <p class='text-white text-lg'>Model:<span id="infoValueGMD" class='font-bold'>N/A</span></p>
+          <p class='text-white text-lg'>VRAM:<span id="infoValueGRM" class='font-bold'>N/A</span></p>
+      </div>
+      </div>
+
+    </div>
+
+
+    <div class='flex flex-row'>
+      <div class='flex flex-col justify-center bg-red-400 rounded p-4 m-4 w-full'>
+        <p class='text-white text-2xl font-bold text-center'>Usage Monitor</p>
+        <hr style="width:100%;border-width:1px;" class="mt-2 rounded">
+        <div class="flex flex-row justify-center items-center">
+
+          <div class='p-4 m-2 flex flex-col justify-center items-center'>
+              <p class='text-white text-lg text-2xl'>CPU USAGE:</p>
+            <div class='flex flex-row'>
+              <p id="infoValueCPT" class='font-bold text-white text-6xl'>N/A</p>
+              <p class='font-bold text-white text-6xl'> %</p>
+            </div>
+          </div>
+
+          <div class='p-4 m-2 flex flex-col justify-center items-center'>
+            <p class='text-white text-lg text-2xl'>SYSTEM UPTIME:</p>
+            <div class='flex flex-row'>
+              <p id="infoValueCPM" class='font-bold text-white text-6xl'> N/A</p>
+              <p class='font-bold text-white text-6xl'> s</p>
+            </div>
+          </div>
+
+          <div class='p-4 m-2 flex flex-col justify-center items-center'>
+            <p class='text-white text-lg text-2xl'>FREE MEMORY:</p>
+            <div class='flex flex-row'>
+              <p id="infoValueCPN" class='font-bold text-white text-6xl'> N/A</p>
+              <p class='font-bold text-white text-6xl'> GB</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+
+
+
+    <!-- &nbsp
     <div class='memInfo'>
       <fieldset>
       <legend>System</legend>
@@ -42,35 +123,17 @@
     </fieldset>
   </div>
 
-    <script>
-    const electron=require('electron');
-    const ipcRenderer=electron.ipcRenderer;
+  &nbsp
+  <div class='gfxInfo'>
+    <fieldset>
+    <legend>Graphics</legend>
+    <p class='infoLabel'>Manufacturer:<span id="infoValueGVN">N/A</span></p>
+    <p class='infoLabel'>Model:<span id="infoValueGMD">N/A</span></p>
+    <p class='infoLabel'>VRAM:<span id="infoValueGRM">N/A</span></p>
+  </fieldset>
+  </div> -->
 
-    //catching cpustuff
-    ipcRenderer.on('CPU_INFO',(event,cpu_data) =>{
-      console.log(cpu_data);
-      document.getElementById('infoValueCPUMN').innerHTML=cpu_data[0];
-      document.getElementById('infoValueCPUMO').innerHTML=cpu_data[1];
-      document.getElementById('infoValueCores').innerHTML=cpu_data[2];
+    <script src='fetch.js'></script>
 
-    });
-
-    //catching systemdata
-    ipcRenderer.on('OS_INFO',function(event,os_data){
-      //console.log(data);
-      document.getElementById('infoValueOS').innerHTML=os_data[0];
-      document.getElementById('infoValueOSB').innerHTML=os_data[1];
-      document.getElementById('infoValueHN').innerHTML=os_data[2];
-    });
-
-    //--------------------------------cathing generalinfo
-    ipcRenderer.on('MB_INFO',function(event,mb_data){
-      //console.log(data);
-      document.getElementById('infoValueMAN').innerHTML=mb_data[0];
-      document.getElementById('infoValueMOD').innerHTML=mb_data[1];
-      document.getElementById('infoValueVER').innerHTML=mb_data[2];
-    });
-
-    </script>
   </body>
 </html>
